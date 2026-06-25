@@ -35,7 +35,6 @@
 #### Lists: `ArrayList`, `Vector` and `LinkedList`
 - [[Vectors and Array List\|Vectors and Array List]]
 - [[Enumerations and Iterators\|Enumerations and Iterators]]
-- [[Array List\|Array List]]
 #### Maps: `HashMap`, `LinkedHashMap` and `TreeMap`
 - [[Maps\|Maps]]
 - [[Keys\|Keys]]
