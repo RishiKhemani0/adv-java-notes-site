@@ -22,6 +22,7 @@
 - It is a collection (archive) of multiple classes
 ## Types
 As the Types progress, they move towards pure java and remove external dependencies
+The Starting types Require Config on every box whereas type 4 only needs a single line of dependency
 
 1. **JDBC-ODBC Bridge:** 
 	- It is no longer used
@@ -54,7 +55,12 @@ As the Types progress, they move towards pure java and remove external dependenc
 	- Used internally in products, since it is extremely difficult to maintain multiple databases at once
 	- Uses a special middleware and uses a generic internet protocol for communication with this middleware
 	- This middleware is responsible for receiving requests from the java side and automatically handle which database it matches to
+	- Server runs the middleware which routes to the DB
+	- The URL at the application point towards the middleware
 	- It is used in niche applications and is extremely complex and expensive
+	- The Client is 100% java, it is a single jar file, only one driver at client for multiple DBs
+	- Moves the DB-specific logic out of the client and to the server
+		![Pasted image 20260626173427.png\|625](/img/user/Pasted%20image%2020260626173427.png)
 	
 4. **Thin Driver**
 	- It is Pure Java
@@ -62,3 +68,16 @@ As the Types progress, they move towards pure java and remove external dependenc
 	- It uses TCP socket to ensure communication between the java application and DBMS
 	- Extremely Fast
 	- Most Used
+	- **Requires a different JAR per database vendor**
+	- **Protocol logic lives **
+	- Only One JAR is needed, direct connection with host port :
+		 `Connection conn = DriverManager.getConnection(jdbc:mysql://localhost:3306);`
+	- ![Pasted image 20260626174710.png](/img/user/Pasted%20image%2020260626174710.png)
+
+
+| Type         | How it talks to DB       | Pure Java ?       | Portable | Speed   | Status Today                     |
+| ------------ | ------------------------ | ----------------- | -------- | ------- | -------------------------------- |
+| JDBC - ODBC  | Via ODBC + native driver | No                | No       | Slowest | Dead - Removed in Java 8         |
+| Native - API | Via vendor native C libs | Partly            | No       | Fast    | Niche - Special Performant Cases |
+| Net-Protocol | Via Middleware Server    | Yes (client-side) | Yes      | Medium  | Rare - Multi DB Gateways         |
+| Thin         | Direct Native Protocol   | Yes               | Yes      | Fastest | Default                          |
