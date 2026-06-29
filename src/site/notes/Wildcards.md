@@ -9,7 +9,7 @@ A wildcard is a special syntax used when the type of the generic does not matter
 
 
 ## PECS Rule
-Producer Extends Consumer Super
+Producer Extends Consumer Super[]()
 
 `List<Integer>` and `List<Number>` are un-related types in Java = You cannot pass `List<Integer>` to the method asking for List`<Number>.` Hence Limiting the scope of a method. Multiple declarations need to be made for different types.
 
