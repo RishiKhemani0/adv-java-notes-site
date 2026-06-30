@@ -33,3 +33,5 @@
 - It is used when we want to send packets back to our machine itself
 - It is also commonly referred to as a `localhost
 - It sends a packet from the system back into the system
+
+### A THREAD CAN NEVER THROW AN EXCEPTION.
