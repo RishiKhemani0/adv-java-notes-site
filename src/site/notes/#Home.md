@@ -50,3 +50,6 @@
 ## Sockets
 - [[Client Server Architecture\|Client Server Architecture]]
 - [[Common Classes\|Common Classes]]
+## Lambdas
+- [[Lambdas\|Lambdas]]
+- [[Functional Interfaces\|Functional Interfaces]]
