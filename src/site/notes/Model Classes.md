@@ -10,3 +10,9 @@
 ## BLOBS
 These are a special type used to represent any datatype with raw bytes, this is read as byte[]
 **Only Present in MySQL**
+## When to Create a Model Class
+- One model per table
+- Fields Match Columns
+- No SQL Inside
+- Enum For Fixed Sized Columns
+- Always use `BigDecimal` for Money and plain int for Foreign Key

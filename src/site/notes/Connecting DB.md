@@ -74,5 +74,5 @@ System.out.println(text);
         } catch (SQLException e) {
          e.printStackTrace();
      }
-}\
+}
 ```

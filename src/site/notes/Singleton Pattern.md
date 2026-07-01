@@ -39,7 +39,7 @@ public static DBConnection getInstance() throws SQLException {
 ```java
 public class DBConnection {
 	// Static instance object
-    private static DBConnection instance = null;
+    private static volatile DBConnection instance = null;
     
     // Static Connection object to be used
     private Connection connection = null;
@@ -70,3 +70,11 @@ public class DBConnection {
 }
 
 ```
+
+## Volatile
+- Volatile keyword is used in Multi Threaded Application
+- It is used when one variable may be used at different CPU cores
+- It might happen that CPU Cores might cache the connection.
+- This might cause them to unnecessarily enter the synchronized block
+- Volatile forces Every Core to read that value from the thread
+- This increases speed and ensure safety
